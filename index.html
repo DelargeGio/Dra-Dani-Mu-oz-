@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="rosegold">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Daniela Muñoz | Haute Esthetics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atelier VIP">
+
+</head>
+<body>
+
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="splash-logo-ring"><span>✨</span></div>
+            <h2>Dra. Daniela Muñoz</h2>
+            <p>Haute Esthetics Atelier</p>
+        </div>
+    </div>
+
+    <div class="device-frame">
+        <div class="ios-status-bar">
+            <span id="current-time">9:41</span>
+            <div class="ios-icons">
+                <span>5G</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <div class="app-container">
+
+            <header class="hero-header">
+                <div class="header-top-meta">
+                    <div class="meta-left">
+                        <span class="status-dot-live"></span>
+                        <span class="live-label">Atelier Privado • En Línea</span>
+                    </div>
+                    <div class="header-tools">
+                        <button class="tool-icon-btn" onclick="ciclarTema()" title="Cambiar Tema de Lujo" aria-label="Cambiar tema de color">🎨</button>
+                        <button class="tool-icon-btn" onclick="solicitarPinAdmin()" title="Panel Privado de Citas" aria-label="Abrir panel privado de citas">🔒</button>
+                    </div>
+                </div>
+                <div class="profile-layout">
+                    <div class="avatar-editorial">
+                        <span>DM</span>
+                    </div>
+                    <div class="profile-text">
+                        <h1>Dra. Daniela Muñoz</h1>
+                        <p class="subtitle-chic">✨ Haute Esthetic &amp; Design</p>
+                    </div>
+                </div>
+                <div class="exclusive-badge">
+                    <span>💎 VIP MEMBER CONCIERGE</span>
+                </div>
+            </header>
+
+            <main class="content-scroll">
+
+                <div id="tab-agenda" class="tab-content active">
+                    <div class="aesthetic-banner">
+                        <span class="banner-tag">⚡️ Automatización en Vivo</span>
+                        <h3>Selecciona tu Espacio</h3>
+                        <p>Agenda tu valoración exclusiva en segundos con sincronización en tiempo real.</p>
+                    </div>
+
+                    <div id="dynamic-schedule-container"></div>
+                </div>
+
+                <div id="tab-servicios" class="tab-content">
+                    <div class="aesthetic-card">
+                        <div class="card-top-tag">🌟 Signature Protocol</div>
+                        <h4>Diseño de Sonrisa Digital 4K</h4>
+                        <p>Estudio morfológico 3D y previsualización estética bajo estándares de alta gama.</p>
+                        <div class="card-footer-info">
+                            <span>Valoración Privada</span>
+                            <span class="gold-arrow">→</span>
+                        </div>
+                    </div>
+
+                    <div class="aesthetic-card">
+                        <div class="card-top-tag">💎 Advanced Technology</div>
+                        <h4>Blanqueamiento Cold-Light</h4>
+                        <p>Tecnología alemana de última generación con cero sensibilidad y brillo estelar.</p>
+                        <div class="card-footer-info">
+                            <span>Protocolo VIP</span>
+                            <span class="gold-arrow">→</span>
+                        </div>
+                    </div>
+
+                    <div class="aesthetic-card">
+                        <div class="card-top-tag">👑 Elite Masterpiece</div>
+                        <h4>Carillas Lumineers Ultra-Finas</h4>
+                        <p>Porcelana fina sin desgaste dental, naturalidad absoluta y perfección milimétrica.</p>
+                        <div class="card-footer-info">
+                            <span>Bajo Pedido</span>
+                            <span class="gold-arrow">→</span>
+                        </div>
+                    </div>
+
+                    <div class="aesthetic-card cotizador-card">
+                        <div class="card-top-tag">🧮 Simulador Interactivo</div>
+                        <h3>Cotizador VIP Express</h3>
+                        <p>Selecciona los tratamientos de tu interés para calcular una estimación de inversión y tiempo:</p>
+
+                        <div class="cotizador-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="3500" data-name="Diseño de Sonrisa 3D" onchange="calcularCotizacion()">
+                                <span class="checkmark-box"></span>
+                                <div class="opt-info">
+                                    <strong>Diseño de Sonrisa 3D</strong>
+                                    <small>Estudio morfológico</small>
+                                </div>
+                            </label>
+
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="1800" data-name="Blanqueamiento Cold-Light" onchange="calcularCotizacion()">
+                                <span class="checkmark-box"></span>
+                                <div class="opt-info">
+                                    <strong>Blanqueamiento Cold-Light</strong>
+                                    <small>Tecnología Alemana</small>
+                                </div>
+                            </label>
+
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="6000" data-name="Carillas Lumineers" onchange="calcularCotizacion()">
+                                <span class="checkmark-box"></span>
+                                <div class="opt-info">
+                                    <strong>Carillas Lumineers</strong>
+                                    <small>Porcelana sin desgaste</small>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="cotizador-result-box">
+                            <div>
+                                <small>Inversión Estimada:</small>
+                                <span id="cotizacion-total">$0 MXN</span>
+                            </div>
+                            <button class="btn-cotizar-agendar" id="btn-cotizar" onclick="pasarCotizacionAgenda()" disabled>✨ Agendar con esta selección</button>
+                        </div>
+                    </div>
+
+                    <div class="aesthetic-card ba-card">
+                        <div class="card-top-tag">🔄 Transformaciones Reales</div>
+                        <h3>Before &amp; After Studio</h3>
+                        <p>Toca para alternar entre el estado inicial y el resultado final del Atelier.</p>
+
+                        <div class="ba-interactive-container" id="ba-container" onclick="toggleBeforeAfter()" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBeforeAfter();}">
+                            <div class="ba-image-wrapper">
+                                <div id="ba-badge-label" class="ba-badge after">RESULTADO FINAL (AFTER)</div>
+                                <div class="ba-simulated-art" id="ba-art">✨ Sonrisa Armonizada 4K</div>
+                            </div>
+                            <small class="ba-hint">👆 Toca la tarjeta para ver el Antes (Before)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-ubicacion" class="tab-content">
+                    <div class="aesthetic-card studio-card">
+                        <div class="card-top-tag">🔒 Privacidad Absoluta</div>
+                        <h3>The Dental Atelier</h3>
+                        <p>Instalaciones privadas en zona residencial exclusiva con acceso controlado y discreción total.</p>
+                        <div class="amenities-grid">
+                            <span>🚗 Valet Parking</span>
+                            <span>☕ Coffee &amp; Bar</span>
+                            <span>🛜 High-Speed Wi-Fi</span>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+            <nav class="bottom-tab-bar">
+                <button class="tab-item active" data-tab="agenda" onclick="cambiarTab('agenda', event)">
+                    <span class="tab-icon">📅</span>
+                    <span class="tab-label">Reservar</span>
+                </button>
+                <button class="tab-item" data-tab="servicios" onclick="cambiarTab('servicios', event)">
+                    <span class="tab-icon">✨</span>
+                    <span class="tab-label">Portafolio</span>
+                </button>
+                <button class="tab-item" data-tab="ubicacion" onclick="cambiarTab('ubicacion', event)">
+                    <span class="tab-icon">📍</span>
+                    <span class="tab-label">Studio</span>
+                </button>
+            </nav>
+
+            <div id="booking-modal" class="modal-overlay">
+                <div class="modal-sheet">
+                    <div class="sheet-handle"></div>
+                    <div class="sheet-header">
+                        <h3>Confirmar Cita</h3>
+                        <p id="modal-subtext" class="modal-sub"></p>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-nombre">Tu Nombre Completo</label>
+                        <input type="text" id="input-nombre" placeholder="Ej. Sofía Morales" class="ios-input">
+                        <p id="nombre-error" class="input-error-msg">Por favor escribe tu nombre para continuar.</p>
+                    </div>
+                    <div class="modal-buttons">
+                        <button class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
+                        <button class="btn-confirm" onclick="generarPaseVIP()">✨ Generar Pase VIP</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="vip-pass-screen" class="modal-overlay" style="display: none;">
+                <div class="wallet-pass-card">
+                    <div class="wallet-header">
+                        <span>✨ DENTAL ATELIER PASS</span>
+                        <span class="pass-verified">VERIFICADO</span>
+                    </div>
+                    <div class="wallet-body">
+                        <h2 id="pass-nombre-cliente"></h2>
+                        <p class="wallet-sub">Haute Esthetic Experience</p>
+
+                        <p id="pass-servicios" class="wallet-services"></p>
+
+                        <div class="wallet-grid">
+                            <div>
+                                <small>FECHA</small>
+                                <strong id="pass-fecha">--</strong>
+                            </div>
+                            <div>
+                                <small>HORARIO</small>
+                                <strong id="pass-hora">--</strong>
+                            </div>
+                        </div>
+
+                        <div class="wallet-qr-box">
+                            <img id="qr-code-img" src="" alt="Código QR de la cita" class="real-qr-img">
+                            <small>📱 Presenta este código en recepción</small>
+                        </div>
+                    </div>
+                    <div class="wallet-actions">
+                        <button class="btn-calendar" onclick="descargarICS()">📅 Añadir a Apple / Google Calendar</button>
+                        <button class="btn-confirm" onclick="enviarPaseWhatsApp()">💬 Enviar Pase a WhatsApp</button>
+                        <button class="btn-cancel" onclick="cerrarPase()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="admin-modal" class="modal-overlay" style="display: none;">
+                <div class="modal-sheet admin-sheet">
+                    <div class="sheet-handle"></div>
+                    <div class="sheet-header">
+                        <h3>Panel Privado 🔒</h3>
+                        <p class="modal-sub">Gestión de Citas - Dra. Daniela</p>
+                    </div>
+                    <div id="admin-content-area"></div>
+                    <div class="modal-buttons" style="margin-top: 14px;">
+                        <button class="btn-cancel" onclick="cerrarAdminModal()">Cerrar Panel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ios-home-indicator"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
